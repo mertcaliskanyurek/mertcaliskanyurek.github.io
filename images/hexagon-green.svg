@@ -1,0 +1,17 @@
+<svg width="98.4" height="88.3" xmlns="http://www.w3.org/2000/svg">
+ <style type="text/css">.st0{fill:#14BF98;}</style>
+
+ <title>hexagon-orange</title>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_1" d="m1.2,49.3c-1.6,-3.3 -1.6,-7.1 0,-10.4l19.5,-33.7c2,-3.1 5.3,-5 9,-5.2l39,0c3.7,0.2 7,2.1 9,5.2l19.5,33.8c1.6,3.3 1.6,7.1 0,10.4l-19.5,33.7c-2,3.1 -5.3,5 -9,5.2l-39,0c-3.7,-0.2 -7,-2.1 -9,-5.2l-19.5,-33.8z" class="st0"/>
+  <path stroke="#000" id="svg_2" d="m-2.423496,44.221526l21.857145,-44.499996l58.285716,0l21.857138,44.499996l-21.857138,44.499996l-58.285716,0l-21.857145,-44.499996z" stroke-width="0" fill="#d68448"/>
+  <path id="svg_3" d="m55.700012,53.603119c0,0 21,-37 22,-37c1,0 8,51 8,51" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#d68448"/>
+  <path d="m62.700012,54.603119c0,0 0,0 0,-1c0,0 -0.224205,-1.902824 -1,-4c-1.430496,-3.867001 -3.196941,-8.970482 -4,-15c-1.326805,-9.961906 -1,-19 -1,-25c0,-3 0.108856,-3.800801 3,-3c5.619377,1.556477 10.693626,5.730378 17,10c5.855316,3.964245 11.831795,10.522156 15,17c2.778702,5.681446 3,13 3,20c0,8 -0.041016,16.948997 -10,25c-5.216743,4.2173 -10,4 -15,5l-2,0l-3,-1l-3,-2" id="svg_4" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="none"/>
+  <path d="m47.700012,37.603119c-47.700012,-37.603119 -47.700012,-37.603119 -47.700012,-37.603119l47.700012,37.603119l1,0l6,0" id="svg_5" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="none"/>
+ </g>
+</svg>
