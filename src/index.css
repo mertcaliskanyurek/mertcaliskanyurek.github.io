@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+ * DESIGN SYSTEM: "Modern Professionalism"
+ * Deep charcoal/slate palette with Electric Blue accents
+ * Typography: Inter (headers) + JetBrains Mono (technical)
+ */
+
+@layer base {
+  :root {
+    /* Core palette - Dark sophisticated theme */
+    --background: 220 20% 7%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 95%;
+
+    /* Electric Blue primary accent */
+    --primary: 205 100% 55%;
+    --primary-foreground: 220 20% 7%;
+
+    /* Slate secondary */
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 210 20% 85%;
+
+    /* Muted slate tones */
+    --muted: 220 15% 15%;
+    --muted-foreground: 215 15% 55%;
+
+    /* Accent - Cyber Lime for highlights */
+    --accent: 82 100% 55%;
+    --accent-foreground: 220 20% 7%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 18%;
+    --ring: 205 100% 55%;
+
+    --radius: 0.75rem;
+
+    /* Extended palette */
+    --surface-elevated: 220 18% 12%;
+    --surface-hover: 220 15% 16%;
+    --text-secondary: 215 15% 65%;
+    --text-tertiary: 215 15% 45%;
+    --glow-primary: 205 100% 55%;
+    --glow-accent: 82 100% 55%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(205 100% 55%) 0%, hsl(220 100% 65%) 100%);
+    --gradient-surface: linear-gradient(180deg, hsl(220 18% 12%) 0%, hsl(220 20% 7%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(210 20% 95%) 0%, hsl(205 100% 75%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(82 100% 55%) 0%, hsl(160 100% 45%) 100%);
+    --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(205 100% 55% / 0.15) 0%, transparent 70%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 20% 0% / 0.3);
+    --shadow-md: 0 4px 6px -1px hsl(220 20% 0% / 0.4), 0 2px 4px -2px hsl(220 20% 0% / 0.3);
+    --shadow-lg: 0 10px 15px -3px hsl(220 20% 0% / 0.5), 0 4px 6px -4px hsl(220 20% 0% / 0.4);
+    --shadow-glow: 0 0 40px -10px hsl(205 100% 55% / 0.5);
+    --shadow-glow-accent: 0 0 30px -10px hsl(82 100% 55% / 0.4);
+
+    /* Sidebar */
+    --sidebar-background: 220 18% 8%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 205 100% 55%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 205 100% 55%;
+  }
+
+  .dark {
+    /* Same as root - dark by default */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    @apply bg-primary/30 text-foreground;
+  }
+}
+
+@layer components {
+  /* Typography utilities */
+  .font-display {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-weight: 700;
+  }
+
+  .font-mono-tech {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Gradient text */
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .text-gradient-hero {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-text);
+  }
+
+  /* Surface utilities */
+  .surface-elevated {
+    background-color: hsl(var(--surface-elevated));
+  }
+
+  .surface-glass {
+    @apply backdrop-blur-xl;
+    background: hsl(var(--card) / 0.8);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-accent {
+    box-shadow: var(--shadow-glow-accent);
+  }
+
+  /* Status badge pulse */
+  .status-pulse {
+    @apply relative;
+  }
+
+  .status-pulse::before {
+    content: '';
+    @apply absolute inset-0 rounded-full bg-accent animate-ping opacity-75;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+  }
+
+  /* Timeline connector */
+  .timeline-connector {
+    @apply absolute left-4 top-12 bottom-0 w-px bg-gradient-to-b from-primary via-primary/50 to-transparent;
+  }
+
+  /* Tech tag styles */
+  .tech-tag {
+    @apply inline-flex items-center px-2.5 py-1 rounded-md text-xs font-mono-tech font-medium;
+    @apply bg-secondary/80 text-secondary-foreground border border-border/50;
+    @apply transition-all duration-200 hover:bg-primary/20 hover:border-primary/50 hover:text-primary;
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply w-full h-px bg-gradient-to-r from-transparent via-border to-transparent;
+  }
+
+  /* Hero background pattern */
+  .hero-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(205 100% 55% / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, hsl(82 100% 55% / 0.02) 0%, transparent 50%);
+  }
+
+  /* Grid pattern overlay */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.1) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Skill bar */
+  .skill-bar {
+    @apply h-1.5 rounded-full overflow-hidden bg-secondary;
+  }
+
+  .skill-bar-fill {
+    @apply h-full rounded-full transition-all duration-700 ease-out;
+    background: var(--gradient-primary);
+  }
+}
+
+@layer utilities {
+  /* Text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Animation delays */
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+
+  /* Scrollbar styling */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+}
