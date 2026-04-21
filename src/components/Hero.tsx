@@ -25,7 +25,7 @@ const Hero = () => {
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent" />
             </span>
             <span className="text-sm font-medium text-secondary-foreground">
-              Currently based in Malta 🇲🇹 
+              Currently based in Antalya, Turkey 🇹🇷
               <span className="mx-2 text-muted-foreground">|</span>
               Engineering Scalable Systems
             </span>
@@ -39,7 +39,7 @@ const Hero = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-display leading-tight mb-6"
           >
             <span className="text-foreground">Building </span>
-            <span className="text-gradient-primary">Cross-Platform</span>
+            <span className="text-gradient-primary">Native & Cross-Platform Mobile Apps</span>
             <br />
             <span className="text-foreground">Experiences & </span>
             <span className="text-gradient-primary">High-Performance</span>
