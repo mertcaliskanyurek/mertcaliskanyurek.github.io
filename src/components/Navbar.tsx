@@ -50,7 +50,11 @@ const Navbar = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById(link.href.slice(1))?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group cursor-pointer"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
@@ -97,8 +101,12 @@ const Navbar = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block py-3 text-lg font-medium text-foreground hover:text-primary transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsMobileMenuOpen(false);
+                    document.getElementById(link.href.slice(1))?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="block py-3 text-lg font-medium text-foreground hover:text-primary transition-colors cursor-pointer"
                 >
                   {link.label}
                 </a>
